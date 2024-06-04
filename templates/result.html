@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grading Result</title>
+    <style>
+      .text-box {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        white-space: pre-wrap; /* This preserves line breaks in the text */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Grading Result</h1>
+    <div class="text-box">{{ text }}</div>
+    <p>Grade: {{ grade }}</p>
+    <p>Score: {{ score }}</p>
+
+    {% comment %} {% if feedback %}
+    <div class="feedback">
+      <h3>Areas for Improvement:</h3>
+      <ul>
+        {% for point in feedback %}
+        <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}  {% endcomment %}
+    
+    {% comment %}
+    <form action="{% url 'phishing_check' pdf_id=pdf_id %}" method="get">
+      <button type="submit">Check AI</button>
+    </form>
+    {% endcomment %}
+  </body>
+</html>
